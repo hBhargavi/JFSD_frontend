@@ -1,0 +1,169 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <style>
+        /* Ensure html and body take full height */
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%; /* Full height */
+            font-family: Arial, sans-serif;
+        }
+
+        /* Background image */
+        body {
+            background-image: url('https://img.freepik.com/premium-vector/abstract-connecting-lines-dots-dark-blue-background-technology-network-futuristic-connection_551880-254.jpg');
+            background-size: cover; /* Cover the entire background */
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        /* Navbar styling */
+        .navbar {
+            display: flex;
+            justify-content: center; /* Center align items */
+            padding: 15px 0; /* Adjusted padding for top and bottom */
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Transparent black background */
+            z-index: 1000; /* Ensure navbar is above other content */
+        }
+
+        .navbar a {
+            color: white; /* White text color */
+            text-decoration: none;
+            font-size: 18px;
+            padding: 10px 20px;
+            margin: 0 15px; /* Space between links */
+            transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for background and text color */
+        }
+
+        .navbar a:hover {
+            background-color: rgba(255, 255, 255, 0.2); /* Light background on hover */
+            color: #fff; /* Maintain white text color */
+            border-radius: 5px; /* Rounded corners */
+        }
+
+        /* Main content styling */
+        .content {
+            text-align: center;
+            padding-top: 100px; /* Space below the navbar */
+            color: white;
+            padding-bottom: 20px; /* Add space at the bottom */
+        }
+
+        /* Grouping members and mentor */
+        .team-container {
+            display: flex;
+            justify-content: center; /* Center align team members */
+            flex-wrap: wrap; /* Allow wrapping to next line */
+            margin: 20px 0; /* Margin around the team section */
+        }
+
+        .team-member {
+            display: inline-block;
+            margin: 20px;
+            padding: 15px;
+            border: 2px solid #fff; /* White border for contrast */
+            border-radius: 10px;
+            background-color: rgba(0, 0, 0, 0.7); /* Slightly transparent background for team member cards */
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4); /* Stronger shadow for a 3D effect */
+            width: 180px; /* Set a fixed width for uniformity */
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions for hover effect */
+        }
+
+        .team-member:hover {
+            transform: translateY(-10px); /* Move the card slightly upwards */
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.6); /* Increase the shadow on hover for 3D pop */
+        }
+
+        .team-member img {
+            width: 100px; /* Decreased image size */
+            height: 100px; /* Decreased image size */
+            border-radius: 50%; /* Circular image */
+            object-fit: cover; /* Maintain aspect ratio */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Image shadow for more depth */
+        }
+
+        .team-member h3 {
+            margin: 10px 0 5px 0;
+            overflow: hidden; /* Ensures the text does not overflow */
+            white-space: nowrap; /* Prevents text from wrapping */
+            width: 0; /* Start with zero width for typewriter effect */
+            animation: typing 2s steps(30, end) forwards; /* Apply typing animation */
+        }
+
+        /* Typewriter effect */
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+            to {
+                width: 100%; /* Final width based on text length */
+            }
+        }
+
+        .team-member p {
+            margin: 5px 0;
+        }
+
+        /* Mentor styling */
+        .mentor {
+            margin-bottom: 40px; /* Space below the mentor section */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar with items centered -->
+    <div class="navbar">
+        <a href="index.html">Home</a>
+        <a href="About.html">About Us</a>
+        <a href="contactus.html">Contact Us</a>
+        <a href="Login.html">Login</a>
+    </div>
+
+    <!-- Main content -->
+    <div class="content">
+
+        <!-- Mentor Section -->
+        <div class="mentor">
+            <div class="team-member">
+                <img src="surya.jpg" alt="Mr J Surya Kiran">
+                <h3>Mr.J.Surya Kiran</h3>
+                <p>Assistant Professor</p>
+                <p>Mentor</p>
+            </div>
+        </div>
+
+        <!-- Team Members Section -->
+        <div class="team-container">
+            <div class="team-member">
+                <img src="harshitha.jpg" alt="M Harshitha Reddy">
+                <h3>M.Harshitha Reddy</h3>
+                <p>2200030703</p>
+                <p>Team Lead</p>
+            </div>
+            <div class="team-member">
+                <img src="bhargavi.jpg" alt="D Bhargavi">
+                <h3>D.Bhargavi</h3>
+                <p>2200031178</p>
+                <p>Developer</p>
+            </div>
+            <div class="team-member">
+                <img src="srivalli.jpg" alt="CH Srivalli">
+                <h3>Ch.Srivalli</h3>
+                <p>2200030524</p>
+                <p>Developer</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

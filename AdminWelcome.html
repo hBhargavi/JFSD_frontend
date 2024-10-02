@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Titillium+Web:300');
+
+        .fa-2x {
+            font-size: 1.8em;
+        }
+
+        .fa {
+            position: relative;
+            display: table-cell;
+            width: 60px;
+            height: 36px;
+            text-align: center;
+            vertical-align: middle;
+            font-size: 20px;
+        }
+
+        .main-menu {
+            background: #212121;
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            height: 100%;
+            left: 0;
+            width: 250px;
+            overflow: hidden;
+            z-index: 1000;
+        }
+
+        .main-menu ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .main-menu li {
+            display: block;
+        }
+
+        .main-menu li a {
+            color: #999;
+            font-family: 'Titillium Web', sans-serif;
+            font-size: 16px;
+            text-decoration: none;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .main-menu .nav-icon {
+            width: 60px;
+            text-align: center;
+        }
+
+        .main-menu .nav-text {
+            font-size: 16px;
+            margin-left: 10px;
+        }
+
+        .main-menu li a:hover, .main-menu li a:focus {
+            color: #fff;
+            background-color: #000;
+        }
+
+        .main-menu ul.logout {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .area {
+            background: #e2e2e2;
+            margin-left: 250px;
+            padding: 20px;
+            height: 100vh;
+            display: flex;               /* Use flexbox */
+            justify-content: center;     /* Center horizontally */
+            align-items: center;         /* Center vertically */
+        }
+
+        .welcome-container {
+            text-align: center;         /* Center text */
+        }
+
+        .submenu {
+            display: none; /* Initially hide submenu */
+        }
+
+        .submenu a {
+            padding-left: 40px; /* Indent submenu items */
+        }
+
+        .submenu-toggle {
+            cursor: pointer;
+        }
+
+        .submenu-toggle:hover {
+            color: #fff;
+        }
+
+        /* Typewriter effect */
+        .typewriter {
+            font-size: 24px;
+            font-weight: bold;
+            color: #212121;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="area">
+        <div class="welcome-container">
+            <div class="typewriter" id="welcomeText"></div>
+        </div>
+    </div>
+    <nav class="main-menu">
+        <ul>
+            <li>
+                <a href="Adminhome.html">
+                    <i class="fa fa-home fa-2x"></i>
+                    <span class="nav-text">Home</span>
+                </a>
+            </li>
+
+            <!-- Student heading with collapsible submenu -->
+            <li class="submenu-toggle">
+                <a href="javascript:void(0);">
+                    <i class="fa fa-users fa-2x"></i>
+                    <span class="nav-text">Student</span>
+                </a>
+            </li>
+            <ul class="submenu">
+                <li>
+                    <a href="#">
+                        <i class="fa fa-user-plus fa-2x"></i>
+                        <span class="nav-text">Add Student</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fa fa-edit fa-2x"></i>
+                        <span class="nav-text">Update Student</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fa fa-trash fa-2x"></i>
+                        <span class="nav-text">Delete Student</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fa fa-id-card fa-2x"></i>
+                        <span class="nav-text">View Student by ID</span>
+                    </a>
+                </li>
+            </ul>
+
+            <!-- Faculty heading -->
+            <li class="submenu-toggle">
+                <a href="javascript:void(0);">
+                    <i class="fa fa-users fa-2x"></i>
+                    <span class="nav-text">Faculty</span>
+                </a>
+            </li>
+            <ul class="submenu">
+                <li>
+                    <a href="#">
+                        <i class="fa fa-user-plus fa-2x"></i>
+                        <span class="nav-text">Add Faculty</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fa fa-edit fa-2x"></i>
+                        <span class="nav-text">Update Faculty</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fa fa-trash fa-2x"></i>
+                        <span class="nav-text">Delete Faculty</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fa fa-id-card fa-2x"></i>
+                        <span class="nav-text">View Faculty by ID</span>
+                    </a>
+                </li>
+            </ul>
+
+            <!-- My Profile heading -->
+            <li class="submenu-toggle">
+                <a href="javascript:void(0);">
+                    <i class="fa fa-user fa-2x"></i>
+                    <span class="nav-text">My Profile</span>
+                </a>
+            </li>
+            <ul class="submenu">
+                <li>
+                    <a href="#">
+                        <i class="fa fa-eye fa-2x"></i>
+                        <span class="nav-text">View Profile</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fa fa-edit fa-2x"></i>
+                        <span class="nav-text">Update Profile</span>
+                    </a>
+                </li>
+            </ul>
+
+            <!-- Logout -->
+            <li>
+                <a href="AdminLogin.html">
+                    <i class="fa fa-power-off fa-2x"></i>
+                    <span class="nav-text">Logout</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <script>
+        // JavaScript to handle submenu toggle
+        const toggles = document.querySelectorAll('.submenu-toggle');
+        toggles.forEach(toggle => {
+            toggle.addEventListener('click', function() {
+                const submenu = this.nextElementSibling;
+                submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
+            });
+        });
+
+        // Typewriter effect
+        const welcomeText = document.getElementById('welcomeText');
+        const text = 'Welcome Admin';
+        let index = 0;
+
+        function typeWriter() {
+            if (index < text.length) {
+                welcomeText.innerHTML += text.charAt(index);
+                index++;
+                setTimeout(typeWriter, 100); // Adjust typing speed here (milliseconds)
+            }
+        }
+
+        typeWriter(); // Start the typewriter effect
+    </script>
+</body>
+</html>

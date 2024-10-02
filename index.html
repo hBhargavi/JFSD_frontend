@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <style>
+        /* Background image */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('https://img.freepik.com/premium-vector/abstract-connecting-lines-dots-dark-blue-background-technology-network-futuristic-connection_551880-254.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh; /* Full viewport height */
+        }
+
+        /* Navbar styling */
+        .navbar {
+            display: flex;
+            justify-content: center; /* Center align items */
+            padding: 15px 0; /* Adjusted padding for top and bottom */
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Transparent black background */
+        }
+
+        .navbar a {
+            color: white; /* White text color */
+            text-decoration: none;
+            font-size: 18px;
+            padding: 10px 20px;
+            margin: 0 15px; /* Space between links */
+            transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for background and text color */
+        }
+
+        .navbar a:hover {
+            background-color: rgba(255, 255, 255, 0.2); /* Light background on hover */
+            color: #fff; /* Maintain white text color */
+            border-radius: 5px; /* Rounded corners */
+        }
+
+        /* Content styling */
+        .content {
+            text-align: center;
+            padding-top: 150px; /* Space below the navbar */
+            color: white;
+        }
+
+        .content h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .content p {
+            font-size: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+            overflow: hidden; /* Ensures the text is clipped */
+            white-space: nowrap; /* Prevents text wrapping */
+            border-right: 4px solid rgba(255, 255, 255, 0.75); /* Cursor effect */
+            animation: blink-caret 0.75s step-end infinite; /* Blinking cursor effect */
+        }
+
+        /* Blinking cursor effect */
+        @keyframes blink-caret {
+            from, to { border-color: transparent; }
+            50% { border-color: rgba(255, 255, 255, 0.75); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar with items centered -->
+    <div class="navbar">
+        <a href="index.html">Home</a>
+        <a href="About.html">About Us</a>
+        <a href="contactus.html">Contact Us</a>
+        <a href="Login.html">Login</a>
+    </div>
+
+    <!-- Main content -->
+    <div class="content">
+        <h1>Welcome to Our ERP Project</h1>
+        <p id="typewriter"></p> <!-- Placeholder for typewriter effect -->
+    </div>
+
+    <script>
+        // Typewriter effect script
+        const text = "This application is made using Spring Boot, RESTful Web Services.";
+        const typewriterElement = document.getElementById('typewriter');
+        let index = 0;
+
+        function type() {
+            if (index < text.length) {
+                typewriterElement.innerHTML += text.charAt(index);
+                index++;
+                setTimeout(type, 50); // Adjust typing speed (milliseconds)
+            }
+        }
+
+        // Start typing effect
+        type();
+    </script>
+
+</body>
+</html>

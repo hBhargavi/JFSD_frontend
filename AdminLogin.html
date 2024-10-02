@@ -1,0 +1,258 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        :root {
+            --background: #1a1a2e;
+            --color: #ffffff;
+            --primary-color: #0f3460;
+            --form-background: rgba(255, 255, 255, 0.9); /* More opaque background for form */
+            --input-background: rgba(255, 255, 255, 0.8); /* Light input background */
+            --input-focus: rgba(0, 123, 255, 0.3); /* Focused input shadow */
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            background-image: url('https://img.freepik.com/premium-vector/abstract-connecting-lines-dots-dark-blue-background-technology-network-futuristic-connection_551880-254.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin: 0;
+            padding-top: 60px;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Navbar styling */
+        .navbar {
+            display: flex;
+            justify-content: center;
+            padding: 15px 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.7); /* More opaque */
+            z-index: 1000;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 10px 20px;
+            margin: 0 15px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .navbar a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            color: #fff;
+            border-radius: 5px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            text-align: center;
+            color: black; /* Changed heading color to black */
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: calc(100vh - 60px);
+        }
+
+        .login-container {
+            position: relative;
+            width: 22.2rem;
+        }
+
+        .form-container {
+            border: 1px solid hsla(0, 0%, 65%, 0.158);
+            box-shadow: 0 0 36px 1px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            backdrop-filter: blur(20px);
+            z-index: 99;
+            padding: 2rem;
+            background: var(--form-background); /* More opaque background */
+        }
+
+      .login-container form input {
+    display: block;
+    padding: 14.5px;
+    width: 100%;
+    margin: 2rem 0;
+    color: #000000; /* Set text color to black for better visibility */
+    outline: none;
+    background-color: var(--input-background); /* Light input background */
+    border: 1px solid rgba(0, 0, 0, 0.3); /* Darker border */
+    border-radius: 5px;
+    font-weight: 500;
+    font-size: 15px;
+    backdrop-filter: blur(15px);
+    transition: border 0.3s, box-shadow 0.3s; /* Smooth transition */
+}
+
+
+        .login-container form input:focus {
+            box-shadow: 0 0 10px var(--input-focus); /* Focus shadow */
+            border-color: var(--primary-color); /* Highlight border on focus */
+        }
+
+        .login-container form button {
+            background-color: var(--primary-color);
+            color: var(--color);
+            display: block;
+            padding: 13px;
+            border-radius: 5px;
+            outline: none;
+            font-size: 18px;
+            letter-spacing: 1.5px;
+            font-weight: bold;
+            width: 100%;
+            cursor: pointer;
+            margin-bottom: 2rem;
+            border: none;
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+
+        .login-container form button:hover {
+            box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.15);
+            background-color: #0d2852; /* Darker on hover */
+        }
+
+        .circle {
+            width: 8rem;
+            height: 8rem;
+            background: var(--primary-color);
+            border-radius: 50%;
+            position: absolute;
+        }
+
+        .illustration {
+            position: absolute;
+            top: -14%;
+            right: -2px;
+            width: 90%;
+        }
+
+        .circle-one {
+            top: 0;
+            left: 0;
+            z-index: -1;
+            transform: translate(-45%, -45%);
+        }
+
+        .circle-two {
+            bottom: 0;
+            right: 0;
+            z-index: -1;
+            transform: translate(45%, 45%);
+        }
+
+        .register-forget {
+            margin: 1rem 0;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .register-forget a {
+            color: black; /* Changed link color to black */
+        }
+
+        .register-forget a:hover {
+            color: blue; /* Changed hover color to blue */
+        }
+
+        .opacity {
+            opacity: 0.8; /* Slightly more opaque */
+        }
+
+        .theme-btn-container {
+            position: absolute;
+            left: 0;
+            bottom: 2rem;
+            display: flex;
+            flex-direction: column; /* Stack buttons vertically */
+            gap: 10px; /* Space between buttons */
+        }
+
+        .theme-btn {
+            cursor: pointer;
+            transition: all 0.3s ease-in;
+            background-color: var(--primary-color); /* Primary color for background */
+            color: var(--color); /* Text color */
+            border: none; /* Remove border */
+            padding: 10px; /* Padding for buttons */
+            border-radius: 5px; /* Rounded corners */
+            width: 150px; /* Fixed width for rectangular buttons */
+            text-align: center; /* Center text */
+            font-size: 16px; /* Font size */
+        }
+
+        @keyframes wobble {
+            0% {
+                transform: scale(1.025);
+            }
+            25% {
+                transform: scale(1);
+            }
+            75% {
+                transform: scale(1.025);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar with items centered -->
+    <div class="navbar">
+        <a href="index.html">Home</a>
+        <a href="About.html">About Us</a>
+        <a href="contactus.html">Contact Us</a>
+        <a href="Login.html">Login</a>
+    </div>
+
+    <section class="container">
+        <div class="login-container">
+            <div class="circle circle-one"></div>
+            <div class="form-container">
+                <img src="https://raw.githubusercontent.com/hicodersofficial/glassmorphism-login-form/master/assets/illustration.png" alt="illustration" class="illustration" />
+                <h1 class="opacity">ADMIN LOGIN</h1>
+                <form action="Adminhome.html" method="POST">
+    	<input type="text" placeholder="USERNAME" required />
+    	<input type="password" placeholder="PASSWORD" required />
+    	<button class="opacity" type="submit">SUBMIT</button>
+</form>
+
+                <div class="register-forget opacity">
+                    <a href="AdminLogin.html">Admin</a>&nbsp;
+                    <a href="FacultyLogin.html">Faculty</a>&nbsp;
+                    <a href="ForgotPassword.html">Forgot Password</a>
+                </div>
+            </div>
+            <div class="circle circle-two"></div>
+        </div>
+
+        <div class="theme-btn-container" id="theme-buttons">
+            <!-- Theme buttons will be dynamically added here -->
+        </div>
+    </section>
+
+  
+</body>
+</html>
